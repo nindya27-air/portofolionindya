@@ -1,124 +1,461 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Portofolio Desain Grafis Nindya</title>
 
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    rel="stylesheet">
+<title>Moorine | Graphic Designer Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
+
 <body>
 
-<header>
-    <nav class="navbar">
-        <h2 class="logo">PORTOFOLIO DESAIN GRAFIS</h2>
+<!-- LOADER -->
 
-        <ul class="nav-links">
-            <li><a href="#home">Beranda</a></li>
-            <li><a href="#portfolio">Portofolio</a></li>
-            <li><a href="#about">Tentang</a></li>
-            <li><a href="#contact">Kontak</a></li>
-            <li>
-                <a href="login/login.html" class="login-btn">
-                    Login
-                </a>
-            </li>
-        </ul>
-    </nav>
+<div class="loader">
+
+    <div class="loader-circle"></div>
+
+</div>
+
+<!-- NAVBAR -->
+
+<header>
+
+<nav class="navbar">
+
+    <h2 class="logo">
+        MOORINE
+    </h2>
+
+    <div class="menu-btn">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#home">Beranda</a>
+        </li>
+
+        <li>
+            <a href="#portfolio">Portofolio</a>
+        </li>
+
+        <li>
+            <a href="#about">Tentang</a>
+        </li>
+
+        <li>
+            <a href="#video">Video</a>
+        </li>
+
+        <li>
+            <a href="#maps">Lokasi</a>
+        </li>
+
+        <li>
+            <a href="#contact">Kontak</a>
+        </li>
+
+        <li>
+            <a href="login/login.html" class="login-btn">
+                Login
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
 </header>
 
+<!-- HERO -->
+
 <section id="home" class="hero">
-    <div class="hero-content">
-        <h1>PORTOFOLIO </h1>
 
-        <p>
-            Mengubah ide menjadi visual yang elegan,
-            modern, dan penuh karakter.
-        </p>
+<div class="hero-content">
 
-        <a href="#portfolio" class="btn">
-            Lihat Karya
-        </a>
-    </div>
-</section>
+    <span class="hero-badge">
+        Graphic Designer Portfolio
+    </span>
 
-<section id="portfolio" class="portfolio">
-    <h2>Portofolio</h2>
-
-    <div class="portfolio-grid">
-
-        <div class="card">
-            <img src="assets/images/work1.jpg" alt="">
-            <h3>Branding Design</h3>
-        </div>
-
-        <div class="card">
-            <img src="assets/images/work2.jpg" alt="">
-            <h3>Social Media Design</h3>
-        </div>
-
-        <div class="card">
-            <img src="assets/images/work3.jpg" alt="">
-            <h3>Poster Design</h3>
-        </div>
-
-    </div>
-</section>
-
-<section id="about" class="about">
-    <h2>Tentang Saya</h2>
+    <h1>
+        Creative Graphic Designer
+    </h1>
 
     <p>
-        Halo, saya seorang Graphic Designer yang berfokus
-        pada branding, social media, dan visual storytelling.
+
+        Mengubah ide menjadi visual yang elegan,
+        modern, dan penuh karakter untuk membantu
+        brand tampil lebih menarik dan berkesan.
+
     </p>
-</section>
 
-<section class="youtube">
-    <h2>Video Showcase</h2>
+    <div class="hero-buttons">
 
-    <iframe
-        src="https://www.youtube.com/embed/jNQXAC9IVRw"
-        allowfullscreen>
-    </iframe>
-</section>
+        <a href="#portfolio" class="btn-primary">
 
-<section class="maps">
-    <h2>Lokasi</h2>
+            Lihat Karya
 
-    <iframe
-    src="https://www.google.com/maps/embed?pb="
-    loading="lazy">
-    </iframe>
-</section>
-
-<section id="contact" class="contact">
-    <h2>Kontak</h2>
-
-    <div class="socials">
-
-        <a href="https://instagram.com/username"
-        target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-            Instagram
         </a>
 
-        <a href="mailto:email@gmail.com">
-            <i class="fa-solid fa-envelope"></i>
-            Email
+        <a href="#contact" class="btn-secondary">
+
+            Hubungi Saya
+
         </a>
 
     </div>
+
+</div>
+
 </section>
 
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stats-container">
+
+    <div class="stat-card">
+
+        <h2 class="counter"
+        data-target="150">0</h2>
+
+        <p>Project Selesai</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2 class="counter"
+        data-target="75">0</h2>
+
+        <p>Klien Puas</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2 class="counter"
+        data-target="4">0</h2>
+
+        <p>Tahun Pengalaman</p>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio" class="portfolio">
+
+<h2 class="section-title">
+
+Portofolio
+
+</h2>
+
+<p class="section-subtitle">
+
+Beberapa karya terbaik yang pernah saya kerjakan.
+
+</p>
+
+<div class="portfolio-grid">
+
+    <div class="card">
+
+        <img src="assets/images/work1.jpg"
+        alt="Project 1">
+
+        <div class="card-content">
+
+            <h3>Brand Identity</h3>
+
+            <p>
+                Desain identitas visual modern.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <img src="assets/images/work2.jpg"
+        alt="Project 2">
+
+        <div class="card-content">
+
+            <h3>Social Media Design</h3>
+
+            <p>
+                Konten kreatif Instagram.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <img src="assets/images/work3.jpg"
+        alt="Project 3">
+
+        <div class="card-content">
+
+            <h3>Poster Design</h3>
+
+            <p>
+                Poster promosi dan event.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <img src="assets/images/work4.jpg"
+        alt="Project 4">
+
+        <div class="card-content">
+
+            <h3>Packaging Design</h3>
+
+            <p>
+                Kemasan produk modern.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <img src="assets/images/work5.jpg"
+        alt="Project 5">
+
+        <div class="card-content">
+
+            <h3>UI Design</h3>
+
+            <p>
+                Antarmuka aplikasi modern.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <img src="assets/images/work6.jpg"
+        alt="Project 6">
+
+        <div class="card-content">
+
+            <h3>Creative Campaign</h3>
+
+            <p>
+                Visual marketing campaign.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<h2 class="section-title">
+
+Tentang Saya
+
+</h2>
+
+<div class="about-content">
+
+    <div class="about-text">
+
+        <p>
+
+            Halo! Saya seorang Graphic Designer
+            yang memiliki minat dalam branding,
+            visual identity, social media design,
+            dan digital creative.
+
+        </p>
+
+        <p>
+
+            Saya percaya bahwa desain bukan hanya
+            tentang keindahan visual, tetapi juga
+            bagaimana sebuah pesan dapat tersampaikan
+            secara efektif kepada audiens.
+
+        </p>
+
+        <p>
+
+            Setiap proyek saya kerjakan dengan
+            detail, kreativitas, dan pendekatan
+            yang sesuai dengan kebutuhan klien.
+
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- VIDEO -->
+
+<section id="video" class="youtube">
+
+<h2 class="section-title">
+
+Video Showcase
+
+</h2>
+
+<p class="section-subtitle">
+
+Video dapat diganti sesuai kebutuhan.
+
+</p>
+
+<div class="video-wrapper">
+
+<iframe
+src="https://www.youtube.com/embed/jNQXAC9IVRw"
+title="YouTube video"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
+
+<!-- MAPS -->
+
+<section id="maps" class="maps">
+
+<h2 class="section-title">
+
+Lokasi
+
+</h2>
+
+<p class="section-subtitle">
+
+Google Maps dapat diganti kapan saja.
+
+</p>
+
+<div class="map-wrapper">
+
+<iframe
+src="https://www.google.com/maps/embed?pb="
+loading="lazy">
+</iframe>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<h2 class="section-title">
+
+Hubungi Saya
+
+</h2>
+
+<p class="section-subtitle">
+
+Mari bekerja sama untuk proyek kreatif Anda.
+
+</p>
+
+<div class="contact-container">
+
+    <a
+    href="https://instagram.com/username"
+    target="_blank"
+    class="contact-card">
+
+        <i class="fa-brands fa-instagram"></i>
+
+        <span>
+
+            Instagram
+
+        </span>
+
+    </a>
+
+    <a
+    href="mailto:email@gmail.com"
+    class="contact-card">
+
+        <i class="fa-solid fa-envelope"></i>
+
+        <span>
+
+            Email
+
+        </span>
+
+    </a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
 <footer>
-    <p>© 2026 Nindya's Portfolio</p>
+
+<p>
+
+© <span class="year"></span>
+Moorine Portfolio.
+All Rights Reserved.
+
+</p>
+
 </footer>
 
+<!-- SCRIPT -->
+
 <script src="script.js"></script>
+
 </body>
 </html>
