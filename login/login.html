@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — Grafika Studio</title>
+  <link rel="stylesheet" href="login.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>" />
+</head>
+<body>
+
+<div class="auth-card">
+
+  <!-- Logo -->
+  <div class="auth-logo">
+    <a href="../index.html">Grafika<span>Studio</span></a>
+    <p>Portofolio Desain Grafis</p>
+  </div>
+
+  <!-- Header -->
+  <div class="auth-header">
+    <h1>Selamat <span>Datang</span></h1>
+    <p>Masuk ke akun kamu untuk melanjutkan.</p>
+  </div>
+
+  <!-- Alert -->
+  <div class="auth-alert" id="loginAlert" role="alert"></div>
+
+  <!-- Form -->
+  <form class="auth-form" id="loginForm" novalidate>
+
+    <!-- Username / Email -->
+    <div class="form-group">
+      <label for="loginEmail">Email atau Username</label>
+      <div class="input-wrap">
+        <input
+          type="text"
+          id="loginEmail"
+          name="email"
+          placeholder="email@kamu.com"
+          autocomplete="username"
+          required />
+        <span class="input-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </span>
+      </div>
+      <span class="field-msg" id="emailMsg"></span>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <label for="loginPassword">Password</label>
+      <div class="input-wrap">
+        <input
+          type="password"
+          id="loginPassword"
+          name="password"
+          placeholder="Masukkan password"
+          autocomplete="current-password"
+          required />
+        <button type="button" class="toggle-password" aria-label="Tampilkan password" id="toggleLoginPass">
+          <svg id="eyeIconLogin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </button>
+      </div>
+      <span class="field-msg" id="passMsg"></span>
+    </div>
+
+    <!-- Remember + Forgot -->
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:-4px;">
+      <div class="remember-row">
+        <input type="checkbox" id="rememberMe" name="remember" />
+        <label for="rememberMe">Ingat saya</label>
+      </div>
+      <div class="forgot-link">
+        <a href="forgot.html">Lupa password?</a>
+      </div>
+    </div>
+
+    <button type="submit" class="btn-auth" id="loginBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+      Masuk
+    </button>
+
+  </form>
+
+  <div class="auth-divider">atau</div>
+
+  <div class="auth-footer">
+    Belum punya akun?
+    <a href="register.html">Daftar sekarang</a>
+  </div>
+
+</div>
+
+<script src="js/login.js"></script>
+</body>
+</html>
