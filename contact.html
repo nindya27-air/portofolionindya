@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontak — Grafika Studio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">Grafika<span>Studio</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="portfolio.html">Portofolio</a></li>
+    <li><a href="about.html">Tentang</a></li>
+    <li><a href="contact.html" class="active">Kontak</a></li>
+    <li><a href="login/login.html" class="btn-login">Login</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav">
+  <a href="index.html">Beranda</a>
+  <a href="portfolio.html">Portofolio</a>
+  <a href="about.html">Tentang</a>
+  <a href="contact.html">Kontak</a>
+  <a href="login/login.html">Login</a>
+</div>
+
+<!-- PAGE HEADER -->
+<section style="padding: 130px 5% 60px; background: var(--white); text-align: center;">
+  <p class="section-eyebrow reveal" style="justify-content:center;">Hubungi Saya</p>
+  <h1 class="section-title reveal" style="font-size: clamp(2.5rem, 5vw, 4rem);">
+    Mari <span class="italic">Berkolaborasi</span>
+  </h1>
+  <div class="section-divider" style="margin: 1.2rem auto 0;"></div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section" style="padding-top: 40px;">
+  <div class="contact-grid">
+
+    <!-- Info & Social -->
+    <div class="contact-info reveal">
+      <h3>Yuk, Ngobrol!</h3>
+      <p>
+        Punya proyek seru yang ingin dikerjakan bersama? Atau sekadar ingin
+        tanya-tanya soal desain? Jangan ragu untuk menghubungi saya lewat
+        salah satu kanal di bawah ini.
+      </p>
+
+      <div class="social-links">
+
+        <!--
+          ╔══════════════════════════════════════════════════════════╗
+          ║  CARA GANTI SOSIAL MEDIA:                                ║
+          ║                                                          ║
+          ║  INSTAGRAM:                                              ║
+          ║  Ganti href="https://instagram.com/USERNAME_KAMU"        ║
+          ║  Ganti teks "namakamu_ig" dengan username Instagram-mu   ║
+          ║                                                          ║
+          ║  EMAIL:                                                  ║
+          ║  Ganti href="mailto:emailkamu@gmail.com"                 ║
+          ║  Ganti teks "emailkamu@gmail.com" sesuai emailmu         ║
+          ╚══════════════════════════════════════════════════════════╝
+        -->
+
+        <!-- INSTAGRAM LINK — Bisa langsung diklik, akan membuka Instagram -->
+        <a
+          href="https://instagram.com/namakamu_ig"
+          class="social-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Buka Instagram">
+          <div class="social-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-size:0.8rem; opacity:0.7; margin-bottom:2px;">Instagram</div>
+            <div>@namakamu_ig</div>
+          </div>
+          <svg style="margin-left:auto;" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+
+        <!-- EMAIL LINK — Bisa langsung diklik, akan membuka app email -->
+        <a
+          href="mailto:emailkamu@gmail.com"
+          class="social-link"
+          aria-label="Kirim Email">
+          <div class="social-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-size:0.8rem; opacity:0.7; margin-bottom:2px;">Email</div>
+            <div>emailkamu@gmail.com</div>
+          </div>
+          <svg style="margin-left:auto;" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+
+        <!-- Tambah sosial media lain di sini jika perlu (WhatsApp, Behance, dll) -->
+
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form class="contact-form reveal reveal-delay-1" id="contactForm" novalidate>
+      <div class="form-group">
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name" name="name" placeholder="Siapa nama kamu?" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="email@kamu.com" required />
+      </div>
+      <div class="form-group">
+        <label for="subject">Subjek</label>
+        <input type="text" id="subject" name="subject" placeholder="Topik pesan kamu" />
+      </div>
+      <div class="form-group">
+        <label for="message">Pesan</label>
+        <textarea id="message" name="message" placeholder="Ceritakan proyekmu atau pertanyaanmu..." required></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="align-self:flex-start;">
+        Kirim Pesan 🌿
+      </button>
+    </form>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Grafika<span>Studio</span></div>
+      <p class="footer-tagline">Desain yang bercerita, visual yang berkesan.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="index.html">Beranda</a>
+      <a href="portfolio.html">Portofolio</a>
+      <a href="about.html">Tentang</a>
+      <a href="contact.html">Kontak</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 GrafikaStudio — Dibuat dengan ❤️ &amp; banyak kopi
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
