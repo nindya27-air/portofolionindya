@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang — Grafika Studio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">Grafika<span>Studio</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="portfolio.html">Portofolio</a></li>
+    <li><a href="about.html" class="active">Tentang</a></li>
+    <li><a href="contact.html">Kontak</a></li>
+    <li><a href="login/login.html" class="btn-login">Login</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav">
+  <a href="index.html">Beranda</a>
+  <a href="portfolio.html">Portofolio</a>
+  <a href="about.html">Tentang</a>
+  <a href="contact.html">Kontak</a>
+  <a href="login/login.html">Login</a>
+</div>
+
+<!-- ABOUT SECTION -->
+<section class="about-section" style="padding-top: 130px;">
+  <div class="about-inner">
+
+    <!-- Visual -->
+    <div class="about-visual reveal">
+      <div class="about-photo-wrap">
+        <!--
+          📌 CARA GANTI FOTO PROFIL:
+          Ganti src di bawah ini dengan path foto kamu.
+          Contoh: src="assets/img/foto-profil.jpg"
+        -->
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80" alt="Foto Profil Desainer" />
+      </div>
+      <div class="about-photo-deco"></div>
+      <div class="about-badge">
+        <strong data-count="50" data-suffix="+">50+</strong>
+        Proyek<br>Selesai
+      </div>
+    </div>
+
+    <!-- Text -->
+    <div class="about-text">
+      <div class="section-header" style="text-align:left;">
+        <p class="section-eyebrow">Tentang Saya</p>
+        <h2 class="section-title reveal">
+          Halo, Saya<br><span class="italic">Nama Kamu</span>
+        </h2>
+        <div class="section-divider" style="margin-left:0;"></div>
+      </div>
+
+      <p class="about-bio reveal">
+        <!--
+          📌 CARA GANTI BIO:
+          Edit teks di bawah ini sesuai profil kamu.
+        -->
+        Saya adalah seorang desainer grafis yang berbasis di Indonesia, dengan passion
+        dalam menciptakan karya visual yang kuat dan berkesan. Saya percaya bahwa desain
+        yang baik bukan hanya soal estetika — tapi tentang menyampaikan pesan yang tepat
+        kepada orang yang tepat.
+      </p>
+
+      <p class="about-bio reveal" style="margin-top: -0.5rem;">
+        Dengan pengalaman lebih dari 3 tahun, saya telah bekerja dengan berbagai klien
+        mulai dari UMKM lokal hingga brand nasional, membantu mereka membangun identitas
+        visual yang konsisten dan impactful.
+      </p>
+
+      <!-- Skills -->
+      <div class="skills-list reveal">
+        <!--
+          📌 CARA TAMBAH/HAPUS SKILL:
+          Salin atau hapus elemen <span class="skill-tag"> sesuai kebutuhan.
+        -->
+        <span class="skill-tag">Adobe Illustrator</span>
+        <span class="skill-tag">Adobe Photoshop</span>
+        <span class="skill-tag">Figma</span>
+        <span class="skill-tag">Canva Pro</span>
+        <span class="skill-tag">Adobe InDesign</span>
+        <span class="skill-tag">Procreate</span>
+        <span class="skill-tag">Typography</span>
+        <span class="skill-tag">Branding</span>
+        <span class="skill-tag">UI/UX</span>
+      </div>
+
+      <div class="reveal">
+        <a href="contact.html" class="btn-primary" style="display:inline-flex; margin-top: 0.5rem;">
+          Hubungi Saya
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MAPS SECTION -->
+<section class="maps-section">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">Lokasi</p>
+    <h2 class="section-title">Temukan <span class="italic">Studio</span></h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="maps-inner">
+    <div class="maps-info reveal">
+      <h3>📍 Alamat Studio</h3>
+      <!--
+        📌 CARA GANTI INFORMASI LOKASI:
+        Edit teks di bawah sesuai alamat kamu.
+      -->
+      <p><strong>Nama Tempat:</strong> Grafika Creative Studio</p>
+      <p><strong>Alamat:</strong> Jl. Kreatif No. 88, Kutoarjo</p>
+      <p><strong>Kota:</strong> Purworejo, Jawa Tengah, Indonesia</p>
+      <p><strong>Jam Buka:</strong> Senin–Jumat, 09.00–17.00 WIB</p>
+      <p style="margin-top: 1.2rem;">
+        <a href="contact.html" class="btn-secondary" style="display: inline-flex;">Buat Janji Temu</a>
+      </p>
+    </div>
+
+    <div class="reveal">
+      <div class="maps-container">
+        <!--
+          ╔═══════════════════════════════════════════════════════╗
+          ║  CARA GANTI LOKASI MAPS:                              ║
+          ║  1. Buka Google Maps di browser                       ║
+          ║  2. Cari lokasi yang diinginkan                       ║
+          ║  3. Klik Share (Bagikan) → Embed a map                ║
+          ║  4. Copy kode <iframe> yang muncul                    ║
+          ║  5. Ganti seluruh <iframe> di bawah ini               ║
+          ╚═══════════════════════════════════════════════════════╝
+        -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.867!2d109.910!3d-7.724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a7a7a7a7a7a7a%3A0x0!2sKutoarjo%2C+Purworejo%2C+Jawa+Tengah!5e0!3m2!1sid!2sid!4v1234567890"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Lokasi Studio">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Grafika<span>Studio</span></div>
+      <p class="footer-tagline">Desain yang bercerita, visual yang berkesan.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="index.html">Beranda</a>
+      <a href="portfolio.html">Portofolio</a>
+      <a href="about.html">Tentang</a>
+      <a href="contact.html">Kontak</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 GrafikaStudio — Dibuat dengan ❤️ &amp; banyak kopi
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
