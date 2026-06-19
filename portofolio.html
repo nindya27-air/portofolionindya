@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio — Grafika Studio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">Grafika<span>Studio</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="portfolio.html" class="active">Portofolio</a></li>
+    <li><a href="about.html">Tentang</a></li>
+    <li><a href="contact.html">Kontak</a></li>
+    <li><a href="login/login.html" class="btn-login">Login</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav">
+  <a href="index.html">Beranda</a>
+  <a href="portfolio.html">Portofolio</a>
+  <a href="about.html">Tentang</a>
+  <a href="contact.html">Kontak</a>
+  <a href="login/login.html">Login</a>
+</div>
+
+<!-- PAGE HEADER -->
+<section style="padding: 130px 5% 60px; background: var(--white); text-align: center;">
+  <p class="section-eyebrow reveal" style="justify-content:center;">Semua Karya</p>
+  <h1 class="section-title reveal" style="font-size: clamp(2.5rem, 5vw, 4rem);">
+    Koleksi <span class="italic">Portofolio</span>
+  </h1>
+  <div class="section-divider" style="margin: 1.2rem auto 0;"></div>
+</section>
+
+<!-- PORTFOLIO -->
+<section style="padding: 40px 5% 90px; background: var(--white);">
+
+  <!-- Filter Buttons -->
+  <div class="portfolio-filters reveal">
+    <button class="filter-btn active" data-filter="all">Semua</button>
+    <button class="filter-btn" data-filter="branding">Branding</button>
+    <button class="filter-btn" data-filter="poster">Poster</button>
+    <button class="filter-btn" data-filter="ui">UI Design</button>
+    <button class="filter-btn" data-filter="illustration">Ilustrasi</button>
+    <button class="filter-btn" data-filter="packaging">Packaging</button>
+  </div>
+
+  <div class="portfolio-grid">
+
+    <!-- CARD 1 -->
+    <div class="portfolio-card reveal" data-category="branding">
+      <div class="card-thumb">
+        <!-- 📌 GANTI src dengan path gambar kamu, contoh: src="assets/img/project1.jpg" -->
+        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="Brand Identity Kopi Rempah" loading="lazy" />
+        <div class="card-overlay"><span class="card-overlay-text">↗ Lihat Detail</span></div>
+      </div>
+      <div class="card-body">
+        <p class="card-category">Branding</p>
+        <h3 class="card-title">Brand Identity — Kopi Rempah</h3>
+        <p class="card-desc">Identitas visual penuh kehangatan untuk kedai kopi artisan lokal.</p>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="portfolio-card reveal reveal-delay-1" data-category="poster">
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Festival Seni" loading="lazy" />
+        <div class="card-overlay"><span class="card-overlay-text">↗ Lihat Detail</span></div>
+      </div>
+      <div class="card-body">
+        <p class="card-category">Poster</p>
+        <h3 class="card-title">Festival Seni Nusantara</h3>
+        <p class="card-desc">Poster event budaya dengan eksplorasi tipografi dan motif tradisional.</p>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="portfolio-card reveal reveal-delay-2" data-category="ui">
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80" alt="UI Tani+" loading="lazy" />
+        <div class="card-overlay"><span class="card-overlay-text">↗ Lihat Detail</span></div>
+      </div>
+      <div class="card-body">
+        <p class="card-category">UI Design</p>
+        <h3 class="card-title">Aplikasi Agritech — Tani+</h3>
+        <p class="card-desc">Desain antarmuka aplikasi pertanian modern yang ramah pengguna.</p>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="portfolio-card reveal" data-category="illustration">
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1617957718587-60a442884bee?w=600&q=80" alt="Ilustrasi Digital" loading="lazy" />
+        <div class="card-overlay"><span class="card-overlay-text">↗ Lihat Detail</span></div>
+      </div>
+      <div class="card-body">
+        <p class="card-category">Ilustrasi</p>
+        <h3 class="card-title">Seri Ilustrasi Wayang</h3>
+        <p class="card-desc">Reinterpretasi visual wayang klasik dengan gaya ilustrasi kontemporer.</p>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="portfolio-card reveal reveal-delay-1" data-category="packaging">
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&q=80" alt="Packaging Herbal" loading="lazy" />
+        <div class="card-overlay"><span class="card-overlay-text">↗ Lihat Detail</span></div>
+      </div>
+      <div class="card-body">
+        <p class="card-category">Packaging</p>
+        <h3 class="card-title">Kemasan Produk Herbal — Jamu Asri</h3>
+        <p class="card-desc">Desain kemasan organik yang menyatu dengan nilai kearifan lokal.</p>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="portfolio-card reveal reveal-delay-2" data-category="branding">
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?w=600&q=80" alt="Logo Design" loading="lazy" />
+        <div class="card-overlay"><span class="card-overlay-text">↗ Lihat Detail</span></div>
+      </div>
+      <div class="card-body">
+        <p class="card-category">Branding</p>
+        <h3 class="card-title">Logo System — Studio Bambu</h3>
+        <p class="card-desc">Sistem identitas visual yang fleksibel untuk studio kreatif.</p>
+      </div>
+    </div>
+
+    <!--
+    ╔══════════════════════════════════════════════════════╗
+    ║  CARA MENAMBAH KARYA BARU:                           ║
+    ║  Salin blok <div class="portfolio-card"> di atas,    ║
+    ║  lalu ubah:                                          ║
+    ║  • data-category="..." → branding/poster/ui/dll      ║
+    ║  • src="..."           → path gambar kamu            ║
+    ║  • alt, card-title, card-desc                        ║
+    ╚══════════════════════════════════════════════════════╝
+    -->
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Grafika<span>Studio</span></div>
+      <p class="footer-tagline">Desain yang bercerita, visual yang berkesan.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="index.html">Beranda</a>
+      <a href="portfolio.html">Portofolio</a>
+      <a href="about.html">Tentang</a>
+      <a href="contact.html">Kontak</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 GrafikaStudio — Dibuat dengan ❤️ &amp; banyak kopi
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
