@@ -1,118 +1,169 @@
-/* ========================= */
-/* LOADER */
-/* ========================= */
+/* =====================================================
+   PORTFOLIO DESAIN GRAFIS — script.js
+   ===================================================== */
 
-window.addEventListener("load", () => {
+document.addEventListener('DOMContentLoaded', () => {
 
-    const loader = document.querySelector(".loader");
+  // ─── Custom Cursor ───────────────────────────────────
+  if (window.matchMedia('(hover: hover)').matches) {
+    const dot  = document.createElement('div');
+    const ring = document.createElement('div');
+    dot.className  = 'cursor-dot';
+    ring.className = 'cursor-ring';
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
 
-    if(loader){
+    let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
 
-        setTimeout(() => {
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.left  = mouseX - 4 + 'px';
+      dot.style.top   = mouseY - 4 + 'px';
+    });
 
-            loader.style.opacity = "0";
-
-            setTimeout(() => {
-
-                loader.style.display = "none";
-
-            },500);
-
-        },800);
-
+    function animateRing() {
+      ringX += (mouseX - ringX) * 0.15;
+      ringY += (mouseY - ringY) * 0.15;
+      ring.style.left = ringX - 16 + 'px';
+      ring.style.top  = ringY - 16 + 'px';
+      requestAnimationFrame(animateRing);
     }
+    animateRing();
 
-});
+    document.querySelectorAll('a, button, .portfolio-card, .social-link').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        ring.style.width  = '50px';
+        ring.style.height = '50px';
+        ring.style.borderColor = 'var(--olive-dark)';
+      });
+      el.addEventListener('mouseleave', () => {
+        ring.style.width  = '32px';
+        ring.style.height = '32px';
+        ring.style.borderColor = 'var(--olive-main)';
+      });
+    });
+  }
 
-/* ========================= */
-/* NAVBAR SCROLL */
-/* ========================= */
+  // ─── Navbar Scroll ───────────────────────────────────
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    navbar?.classList.toggle('scrolled', window.scrollY > 30);
+  });
 
-const navbar =
-document.querySelector(".navbar");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 50){
-
-        navbar.classList.add("scrolled");
-
-    }else{
-
-        navbar.classList.remove("scrolled");
-
+  // ─── Active Nav Link ─────────────────────────────────
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('active');
     }
+  });
 
-});
+  // ─── Hamburger / Mobile Nav ───────────────────────────
+  const hamburger  = document.querySelector('.hamburger');
+  const mobileNav  = document.querySelector('.mobile-nav');
 
-/* ========================= */
-/* MOBILE MENU */
-/* ========================= */
+  hamburger?.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav?.classList.toggle('open');
+    document.body.style.overflow = mobileNav?.classList.contains('open') ? 'hidden' : '';
+  });
 
-const menuBtn =
-document.querySelector(".menu-btn");
+  mobileNav?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger?.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
 
-const navLinks =
-document.querySelector(".nav-links");
+  // ─── Scroll Reveal ───────────────────────────────────
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
 
-if(menuBtn){
+  reveals.forEach(el => observer.observe(el));
 
-    menuBtn.addEventListener("click", () => {
+  // ─── Portfolio Filter ─────────────────────────────────
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const portfolioCards = document.querySelectorAll('.portfolio-card');
 
-        navLinks.classList.toggle("active");
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-        const icon =
-        menuBtn.querySelector("i");
-
-        if(navLinks.classList.contains("active")){
-
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-xmark");
-
-        }else{
-
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-
+      const category = btn.dataset.filter;
+      portfolioCards.forEach(card => {
+        const match = category === 'all' || card.dataset.category === category;
+        card.style.display = match ? '' : 'none';
+        if (match) {
+          card.style.animation = 'fadeIn 0.4s ease forwards';
         }
-
+      });
     });
+  });
 
-}
+  // ─── Contact Form Submit ───────────────────────────────
+  const form = document.getElementById('contactForm');
+  form?.addEventListener('submit', e => {
+    e.preventDefault();
+    const name  = form.querySelector('[name="name"]')?.value.trim();
+    const email = form.querySelector('[name="email"]')?.value.trim();
+    const msg   = form.querySelector('[name="message"]')?.value.trim();
 
-/* ========================= */
-/* CLOSE MENU */
-/* ========================= */
+    if (!name || !email || !msg) {
+      showToast('Harap isi semua bidang!', 'error');
+      return;
+    }
 
-document
-.querySelectorAll(".nav-links a")
-.forEach(link => {
+    showToast(`Pesan dikirim! Terima kasih, ${name} 🌿`);
+    form.reset();
+  });
 
-    link.addEventListener("click", () => {
+  // ─── Toast Notification ───────────────────────────────
+  function showToast(message, type = 'success') {
+    let toast = document.querySelector('.toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.className = 'toast';
+      document.body.appendChild(toast);
+    }
 
-        navLinks.classList.remove("active");
+    toast.textContent = message;
+    toast.style.background = type === 'error' ? '#c0392b' : 'var(--olive-dark)';
+    toast.classList.add('show');
 
-        const icon =
-        menuBtn.querySelector("i");
+    setTimeout(() => toast.classList.remove('show'), 3200);
+  }
 
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
-
+  // ─── Animated Counter (Hero Stats) ─────────────────────
+  const counters = document.querySelectorAll('[data-count]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el  = e.target;
+      const end = parseInt(el.dataset.count);
+      let start = 0;
+      const step = Math.ceil(end / 50);
+      const timer = setInterval(() => {
+        start = Math.min(start + step, end);
+        el.textContent = start + (el.dataset.suffix || '');
+        if (start >= end) clearInterval(timer);
+      }, 30);
+      counterObserver.unobserve(el);
     });
+  }, { threshold: 0.5 });
 
+  counters.forEach(c => counterObserver.observe(c));
+
+  // ─── Expose showToast globally ────────────────────────
+  window.showToast = showToast;
 });
-
-/* ========================= */
-/* SMOOTH SCROLL */
-/* ========================= */
-
-document
-.querySelectorAll('a[href^="#"]')
-.forEach(anchor => {
-
-    anchor.addEventListener("click", function(e){
-
-        e.preventDefault();
-
-        const target =
-       
