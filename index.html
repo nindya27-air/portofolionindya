@@ -1,461 +1,201 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title> NINDYA | Graphic Designer Portfolio</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grafika Studio — Portofolio Desain Grafis</title>
+  <meta name="description" content="Portofolio desain grafis modern, kreatif, dan penuh karakter." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon (emoji sebagai placeholder) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>" />
 </head>
-
 <body>
 
-<!-- LOADER -->
+<!-- ══════════════════════════════════
+     NAVBAR
+     ══════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">Grafika<span>Studio</span></a>
 
-<div class="loader">
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Beranda</a></li>
+    <li><a href="portfolio.html">Portofolio</a></li>
+    <li><a href="about.html">Tentang</a></li>
+    <li><a href="contact.html">Kontak</a></li>
+    <li><a href="login/login.html" class="btn-login">Login</a></li>
+  </ul>
 
-    <div class="loader-circle"></div>
-
-</div>
-
-<!-- NAVBAR -->
-
-<header>
-
-<nav class="navbar">
-
-    <h2 class="logo">
-        NINDYA DESAIN GRAFIS
-    </h2>
-
-    <div class="menu-btn">
-
-        <i class="fa-solid fa-bars"></i>
-
-    </div>
-
-    <ul class="nav-links">
-
-        <li>
-            <a href="#home">Beranda</a>
-        </li>
-
-        <li>
-            <a href="#portfolio">Portofolio</a>
-        </li>
-
-        <li>
-            <a href="#about">Tentang</a>
-        </li>
-
-        <li>
-            <a href="#video">Video</a>
-        </li>
-
-        <li>
-            <a href="#maps">Lokasi</a>
-        </li>
-
-        <li>
-            <a href="#contact">Kontak</a>
-        </li>
-
-        <li>
-            <a href="login/login.html" class="login-btn">
-                Login
-            </a>
-        </li>
-
-    </ul>
-
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-</header>
+<!-- Mobile Nav -->
+<div class="mobile-nav">
+  <a href="index.html">Beranda</a>
+  <a href="portfolio.html">Portofolio</a>
+  <a href="about.html">Tentang</a>
+  <a href="contact.html">Kontak</a>
+  <a href="login/login.html">Login</a>
+</div>
 
-<!-- HERO -->
+<!-- ══════════════════════════════════
+     HERO
+     ══════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-pattern"></div>
 
-<section id="home" class="hero">
-
-<div class="hero-content">
-
-    <span class="hero-badge">
-        Graphic Designer Portfolio
-    </span>
-
-    <h1>
-        Creative Graphic Designer
+  <div class="hero-content">
+    <p class="hero-eyebrow">Desain Grafis &amp; Visual Creative</p>
+    <h1 class="hero-title">
+      Kreasi Visual yang<br>
+      <span class="highlight">Bercerita</span> &amp;<br>
+      <span class="stroke-text">Berkesan</span>
     </h1>
-
-    <p>
-
-        Mengubah ide menjadi visual yang elegan,
-        modern, dan penuh karakter untuk membantu
-        brand tampil lebih menarik dan berkesan.
-
+    <p class="hero-desc">
+      Mengubah ide menjadi karya visual yang kuat, estetik, dan punya jiwa.
+      Setiap piksel punya tujuan.
     </p>
-
-    <div class="hero-buttons">
-
-        <a href="#portfolio" class="btn-primary">
-
-            Lihat Karya
-
-        </a>
-
-        <a href="#contact" class="btn-secondary">
-
-            Hubungi Saya
-
-        </a>
-
+    <div class="hero-actions">
+      <a href="portfolio.html" class="btn-primary">
+        Lihat Portofolio
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="contact.html" class="btn-secondary">Hubungi Saya</a>
     </div>
+  </div>
 
-</div>
-
+  <!-- Floating Stats Cards -->
+  <div class="hero-floats">
+    <div class="float-card">
+      <div class="fc-num" data-count="50" data-suffix="+">0+</div>
+      <div class="fc-label">Proyek Selesai</div>
+    </div>
+    <div class="float-card">
+      <div class="fc-num" data-count="3" data-suffix=" Thn">0 Thn</div>
+      <div class="fc-label">Pengalaman</div>
+    </div>
+  </div>
 </section>
 
-<!-- STATS -->
+<!-- ══════════════════════════════════
+     PORTFOLIO PREVIEW
+     ══════════════════════════════════ -->
+<section id="portfolio-preview" style="background: var(--white);">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">Karya Pilihan</p>
+    <h2 class="section-title">Koleksi <span class="italic">Terbaru</span></h2>
+    <div class="section-divider"></div>
+  </div>
 
-<section class="stats">
+  <div class="portfolio-grid">
 
-<div class="stats-container">
-
-    <div class="stat-card">
-
-        <h2 class="counter"
-        data-target="150">0</h2>
-
-        <p>Project Selesai</p>
-
-    </div>
-
-    <div class="stat-card">
-
-        <h2 class="counter"
-        data-target="75">0</h2>
-
-        <p>Klien Puas</p>
-
-    </div>
-
-    <div class="stat-card">
-
-        <h2 class="counter"
-        data-target="4">0</h2>
-
-        <p>Tahun Pengalaman</p>
-
-    </div>
-
-</div>
-
-</section>
-
-<!-- PORTFOLIO -->
-
-<section id="portfolio" class="portfolio">
-
-<h2 class="section-title">
-
-Portofolio
-
-</h2>
-
-<p class="section-subtitle">
-
-Beberapa karya terbaik yang pernah saya kerjakan.
-
-</p>
-
-<div class="portfolio-grid">
-
-    <div class="card">
-
-        <img src="assets/images/work1.jpg"
-        alt="Project 1">
-
-        <div class="card-content">
-
-            <h3>Brand Identity</h3>
-
-            <p>
-                Desain identitas visual modern.
-            </p>
-
+    <div class="portfolio-card reveal reveal-delay-1" data-category="branding">
+      <div class="card-thumb">
+        <!-- Ganti src dengan path gambar kamu -->
+        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="Brand Identity Project" loading="lazy" />
+        <div class="card-overlay">
+          <span class="card-overlay-text">↗ Lihat Detail</span>
         </div>
-
+      </div>
+      <div class="card-body">
+        <p class="card-category">Branding</p>
+        <h3 class="card-title">Brand Identity — Kopi Rempah</h3>
+        <p class="card-desc">Identitas visual penuh kehangatan untuk kedai kopi artisan lokal.</p>
+      </div>
     </div>
 
-    <div class="card">
-
-        <img src="assets/images/work2.jpg"
-        alt="Project 2">
-
-        <div class="card-content">
-
-            <h3>Social Media Design</h3>
-
-            <p>
-                Konten kreatif Instagram.
-            </p>
-
+    <div class="portfolio-card reveal reveal-delay-2" data-category="poster">
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Poster Design" loading="lazy" />
+        <div class="card-overlay">
+          <span class="card-overlay-text">↗ Lihat Detail</span>
         </div>
-
+      </div>
+      <div class="card-body">
+        <p class="card-category">Poster</p>
+        <h3 class="card-title">Festival Seni Nusantara</h3>
+        <p class="card-desc">Poster event budaya dengan eksplorasi tipografi dan motif tradisional.</p>
+      </div>
     </div>
 
-    <div class="card">
-
-        <img src="assets/images/work3.jpg"
-        alt="Project 3">
-
-        <div class="card-content">
-
-            <h3>Poster Design</h3>
-
-            <p>
-                Poster promosi dan event.
-            </p>
-
+    <div class="portfolio-card reveal reveal-delay-3" data-category="ui">
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80" alt="UI Design" loading="lazy" />
+        <div class="card-overlay">
+          <span class="card-overlay-text">↗ Lihat Detail</span>
         </div>
-
+      </div>
+      <div class="card-body">
+        <p class="card-category">UI Design</p>
+        <h3 class="card-title">Aplikasi Agritech — Tani+</h3>
+        <p class="card-desc">Desain antarmuka aplikasi pertanian modern yang ramah pengguna.</p>
+      </div>
     </div>
 
-    <div class="card">
+  </div>
 
-        <img src="assets/images/work4.jpg"
-        alt="Project 4">
-
-        <div class="card-content">
-
-            <h3>Packaging Design</h3>
-
-            <p>
-                Kemasan produk modern.
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="card">
-
-        <img src="assets/images/work5.jpg"
-        alt="Project 5">
-
-        <div class="card-content">
-
-            <h3>UI Design</h3>
-
-            <p>
-                Antarmuka aplikasi modern.
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="card">
-
-        <img src="assets/images/work6.jpg"
-        alt="Project 6">
-
-        <div class="card-content">
-
-            <h3>Creative Campaign</h3>
-
-            <p>
-                Visual marketing campaign.
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
+  <div style="text-align:center; margin-top: 3rem;">
+    <a href="portfolio.html" class="btn-secondary">Lihat Semua Karya →</a>
+  </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ══════════════════════════════════
+     VIDEO YOUTUBE
+     ══════════════════════════════════ -->
+<section class="video-section">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">Video</p>
+    <h2 class="section-title">Behind the <span class="italic">Process</span></h2>
+    <div class="section-divider"></div>
+  </div>
 
-<section id="about" class="about">
-
-<h2 class="section-title">
-
-Tentang Saya
-
-</h2>
-
-<div class="about-content">
-
-    <div class="about-text">
-
-        <p>
-
-            Halo! Saya seorang Graphic Designer
-            yang memiliki minat dalam branding,
-            visual identity, social media design,
-            dan digital creative.
-
-        </p>
-
-        <p>
-
-            Saya percaya bahwa desain bukan hanya
-            tentang keindahan visual, tetapi juga
-            bagaimana sebuah pesan dapat tersampaikan
-            secara efektif kepada audiens.
-
-        </p>
-
-        <p>
-
-            Setiap proyek saya kerjakan dengan
-            detail, kreativitas, dan pendekatan
-            yang sesuai dengan kebutuhan klien.
-
-        </p>
-
+  <div class="video-wrapper reveal">
+    <div class="video-container">
+      <!--
+        ╔══════════════════════════════════════════════════╗
+        ║  CARA GANTI VIDEO YOUTUBE:                       ║
+        ║  1. Buka video YouTube yang diinginkan           ║
+        ║  2. Klik Share → Embed → copy kode iframe        ║
+        ║  3. Ganti src di bawah ini dengan URL embed-nya  ║
+        ║     Format: https://www.youtube.com/embed/VIDEO_ID║
+        ╚══════════════════════════════════════════════════╝
+      -->
+      <iframe
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title="Behind The Process — Grafika Studio"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
     </div>
-
-</div>
-
+    <p class="video-caption">
+      ✦ Proses kreatif di balik karya-karya terbaik kami ✦
+    </p>
+  </div>
 </section>
 
-<!-- VIDEO -->
-
-<section id="video" class="youtube">
-
-<h2 class="section-title">
-
-Video Showcase
-
-</h2>
-
-<p class="section-subtitle">
-
-Video dapat diganti sesuai kebutuhan.
-
-</p>
-
-<div class="video-wrapper">
-
-<iframe
-src="https://www.youtube.com/embed/jNQXAC9IVRw"
-title="YouTube video"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</section>
-
-<!-- MAPS -->
-
-<section id="maps" class="maps">
-
-<h2 class="section-title">
-
-Lokasi
-
-</h2>
-
-<p class="section-subtitle">
-
-Google Maps dapat diganti kapan saja.
-
-</p>
-
-<div class="map-wrapper">
-
-<iframe
-src="https://www.google.com/maps/embed?pb="
-loading="lazy">
-</iframe>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact" class="contact">
-
-<h2 class="section-title">
-
-Hubungi Saya
-
-</h2>
-
-<p class="section-subtitle">
-
-Mari bekerja sama untuk proyek kreatif Anda.
-
-</p>
-
-<div class="contact-container">
-
-    <a
-    href="https://instagram.com/username"
-    target="_blank"
-    class="contact-card">
-
-        <i class="fa-brands fa-instagram"></i>
-
-        <span>
-
-            Instagram
-
-        </span>
-
-    </a>
-
-    <a
-    href="mailto:email@gmail.com"
-    class="contact-card">
-
-        <i class="fa-solid fa-envelope"></i>
-
-        <span>
-
-            Email
-
-        </span>
-
-    </a>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-
+<!-- ══════════════════════════════════
+     FOOTER
+     ══════════════════════════════════ -->
 <footer>
-
-<p>
-
-© <span class="year"></span>
-NINDYA Portfolio.
-All Rights Reserved.
-
-</p>
-
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Grafika<span>Studio</span></div>
+      <p class="footer-tagline">Desain yang bercerita, visual yang berkesan.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="index.html">Beranda</a>
+      <a href="portfolio.html">Portofolio</a>
+      <a href="about.html">Tentang</a>
+      <a href="contact.html">Kontak</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 GrafikaStudio — Dibuat dengan ❤️ &amp; banyak kopi
+  </div>
 </footer>
 
-<!-- SCRIPT -->
-
 <script src="script.js"></script>
-
 </body>
 </html>
