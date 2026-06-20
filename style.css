@@ -942,3 +942,40 @@ footer {
     mix-blend-mode: multiply;
   }
 }
+
+/* ─── Nav User (setelah login) ─── */
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-greeting {
+  font-size: 0.88rem;
+  color: var(--olive-dark);
+  white-space: nowrap;
+}
+
+.nav-greeting strong {
+  font-weight: 700;
+}
+
+.btn-logout-nav {
+  background: transparent;
+  border: 2px solid var(--olive-light);
+  color: var(--olive-dark);
+  padding: 7px 16px;
+  border-radius: 99px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-logout-nav:hover {
+  background: #c0392b;
+  border-color: #c0392b;
+  color: var(--white);
+   }
