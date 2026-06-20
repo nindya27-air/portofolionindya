@@ -185,18 +185,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const firstName = name.split(' ')[0];
 
   // Ganti tombol Login di desktop nav
-  const btnLogin = document.querySelector('.nav-links .btn-login');
+  // Coba berbagai kemungkinan selector
+  const btnLogin =
+    document.querySelector('.nav-links .btn-login') ||
+    document.querySelector('.btn-login') ||
+    document.querySelector('.nav-links a[href*="login"]');
+
   if (btnLogin) {
-    btnLogin.outerHTML = `
-      <div class="nav-user">
+    const li = btnLogin.closest('li');
+    const target = li || btnLogin;
+    target.outerHTML = `
+      <li class="nav-user">
         <span class="nav-greeting">👋 Halo, <strong>${firstName}</strong></span>
         <button class="btn-logout-nav" id="logoutNavBtn">Logout</button>
-      </div>`;
+      </li>`;
     document.getElementById('logoutNavBtn')?.addEventListener('click', doLogout);
   }
 
   // Ganti link Login di mobile nav
-  const mobileLoginLink = document.querySelector('.mobile-nav a[href="login/login.html"]');
+  const mobileLoginLink =
+    document.querySelector('.mobile-nav a[href="login/login.html"]') ||
+    document.querySelector('.mobile-nav a[href*="login"]');
   if (mobileLoginLink) {
     mobileLoginLink.outerHTML = `
       <span style="color:var(--olive-dark);font-weight:700;font-family:var(--font-display);font-size:1.5rem;">👋 Halo, ${firstName}</span>
