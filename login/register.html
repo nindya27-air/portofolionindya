@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar — Grafika Studio</title>
+  <link rel="stylesheet" href="login.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>" />
+</head>
+<body>
+
+<div class="auth-card">
+
+  <!-- Logo -->
+  <div class="auth-logo">
+    <a href="../index.html">Grafika<span>Studio</span></a>
+    <p>Portofolio Desain Grafis</p>
+  </div>
+
+  <!-- Header -->
+  <div class="auth-header">
+    <h1>Buat <span>Akun Baru</span></h1>
+    <p>Daftar dan mulai menjelajahi portofolio.</p>
+  </div>
+
+  <!-- Alert -->
+  <div class="auth-alert" id="registerAlert" role="alert"></div>
+
+  <!-- Form -->
+  <form class="auth-form" id="registerForm" novalidate>
+
+    <!-- Nama Lengkap -->
+    <div class="form-group">
+      <label for="regName">Nama Lengkap</label>
+      <div class="input-wrap">
+        <input
+          type="text"
+          id="regName"
+          name="name"
+          placeholder="Nama lengkap kamu"
+          autocomplete="name"
+          required />
+        <span class="input-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </span>
+      </div>
+      <span class="field-msg" id="nameMsg"></span>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="regEmail">Email</label>
+      <div class="input-wrap">
+        <input
+          type="email"
+          id="regEmail"
+          name="email"
+          placeholder="email@kamu.com"
+          autocomplete="email"
+          required />
+        <span class="input-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </span>
+      </div>
+      <span class="field-msg" id="emailMsg"></span>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <label for="regPassword">Password</label>
+      <div class="input-wrap">
+        <input
+          type="password"
+          id="regPassword"
+          name="password"
+          placeholder="Masukkan password"
+          autocomplete="new-password"
+          required />
+        <button type="button" class="toggle-password" aria-label="Tampilkan password" id="toggleRegPass">
+          <svg id="eyeIconReg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </button>
+      </div>
+      <!-- Password Strength -->
+      <div class="password-strength" id="strengthBars">
+        <div class="strength-bar" id="bar1"></div>
+        <div class="strength-bar" id="bar2"></div>
+        <div class="strength-bar" id="bar3"></div>
+        <div class="strength-bar" id="bar4"></div>
+      </div>
+      <span class="strength-label" id="strengthLabel"></span>
+      <span class="field-msg" id="passMsg"></span>
+    </div>
+
+    <!-- Konfirmasi Password -->
+    <div class="form-group">
+      <label for="regConfirm">Konfirmasi Password</label>
+      <div class="input-wrap">
+        <input
+          type="password"
+          id="regConfirm"
+          name="confirm"
+          placeholder="Ulangi password kamu"
+          autocomplete="new-password"
+          required />
+        <button type="button" class="toggle-password" aria-label="Tampilkan konfirmasi" id="toggleConfirm">
+          <svg id="eyeIconConfirm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </button>
+      </div>
+      <span class="field-msg" id="confirmMsg"></span>
+    </div>
+
+    <!-- Terms -->
+    <div class="remember-row">
+      <input type="checkbox" id="agreeTerms" name="terms" required />
+      <label for="agreeTerms">
+        Saya setuju dengan
+        <a href="#" style="color:var(--olive-dark);font-weight:600;">Syarat &amp; Ketentuan</a>
+      </label>
+    </div>
+
+    <button type="submit" class="btn-auth" id="registerBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+      Buat Akun
+    </button>
+
+  </form>
+
+  <div class="auth-footer" style="margin-top:1.4rem;">
+    Sudah punya akun?
+    <a href="login.html">Masuk di sini</a>
+  </div>
+
+</div>
+
+<script src="js/register.js"></script>
+</body>
+</html>
