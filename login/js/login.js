@@ -90,8 +90,8 @@ if (loginForm) {
           loginAt: new Date().toLocaleString('id-ID'),
         }));
 
-        // Redirect ke welcome
-        window.location.href = 'welcome.html';
+        // Redirect langsung ke beranda
+        window.location.href = '../index.html';
 
       } else {
         const alertBox = document.getElementById('loginAlert');
@@ -238,4 +238,4 @@ function updateStrengthMeter(password, barIds, labelId) {
 
   const label = document.getElementById(labelId);
   if (label) label.textContent = password.length ? `Kekuatan: ${labels[strength]}` : '';
-}
+       }
