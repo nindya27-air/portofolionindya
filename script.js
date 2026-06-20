@@ -170,13 +170,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ─── Session: Tampilkan Halo User + Logout di Navbar ──
 document.addEventListener('DOMContentLoaded', () => {
+  // Baca sesi — bisa dari API (key: username) atau manual (key: gs_session)
   const session =
-    JSON.parse(localStorage.getItem('gs_session') || 'null') ||
+    JSON.parse(localStorage.getItem('gs_session')   || 'null') ||
     JSON.parse(sessionStorage.getItem('gs_session') || 'null');
 
-  if (!session) return;
+  const usernameRaw =
+    localStorage.getItem('username') ||
+    sessionStorage.getItem('username');
 
-  const firstName = session.name ? session.name.split(' ')[0] : 'User';
+  const name = session?.name || usernameRaw || null;
+  if (!name) return;
+
+  const firstName = name.split(' ')[0];
 
   // Ganti tombol Login di desktop nav
   const btnLogin = document.querySelector('.nav-links .btn-login');
@@ -201,7 +207,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function doLogout() {
     if (!confirm('Yakin ingin keluar?')) return;
     localStorage.removeItem('gs_session');
+    localStorage.removeItem('username');
     sessionStorage.removeItem('gs_session');
+    sessionStorage.removeItem('username');
     window.location.reload();
   }
 });
