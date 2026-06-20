@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lupa Password — Grafika Studio</title>
+  <link rel="stylesheet" href="login.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>" />
+</head>
+<body>
+
+<div class="auth-card">
+
+  <!-- Logo -->
+  <div class="auth-logo">
+    <a href="../index.html">Grafika<span>Studio</span></a>
+    <p>Portofolio Desain Grafis</p>
+  </div>
+
+  <!-- ══════════════════════════════
+       STEP 1 — Masukkan Email
+       ══════════════════════════════ -->
+  <div id="stepEmail">
+    <div class="auth-header">
+      <h1>Lupa <span>Password?</span></h1>
+      <p>Tenang, masukkan email kamu dan kami akan kirim kode verifikasi.</p>
+    </div>
+
+    <div class="auth-alert" id="emailAlert" role="alert"></div>
+
+    <form class="auth-form" id="forgotEmailForm" novalidate>
+      <div class="form-group">
+        <label for="forgotEmail">Alamat Email</label>
+        <div class="input-wrap">
+          <input
+            type="email"
+            id="forgotEmail"
+            name="email"
+            placeholder="email@kamu.com"
+            autocomplete="email"
+            required />
+          <span class="input-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </span>
+        </div>
+        <span class="field-msg" id="forgotEmailMsg"></span>
+      </div>
+
+      <button type="submit" class="btn-auth">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Kirim Kode Verifikasi
+      </button>
+    </form>
+  </div>
+
+  <!-- ══════════════════════════════
+       STEP 2 — Masukkan Kode OTP
+       ══════════════════════════════ -->
+  <div id="stepOTP" style="display:none;">
+    <div class="auth-header">
+      <h1>Cek <span>Email Kamu</span></h1>
+      <p id="otpDesc">Kode 6 digit telah dikirim ke email kamu. (Demo: lihat console)</p>
+    </div>
+
+    <div class="auth-alert" id="otpAlert" role="alert"></div>
+
+    <form class="auth-form" id="forgotOTPForm" novalidate>
+      <div class="form-group">
+        <label for="otpInput">Kode Verifikasi (6 digit)</label>
+        <div class="input-wrap">
+          <input
+            type="text"
+            id="otpInput"
+            name="otp"
+            placeholder="Contoh: 123456"
+            maxlength="6"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            required />
+          <span class="input-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </span>
+        </div>
+        <span class="field-msg" id="otpMsg"></span>
+      </div>
+
+      <!-- Countdown resend -->
+      <p style="font-size:0.82rem; color:var(--olive-main); text-align:center;">
+        Belum terima kode?
+        <button type="button" id="resendBtn" style="background:none;border:none;color:var(--olive-dark);font-weight:600;cursor:pointer;font-family:inherit;font-size:inherit;" disabled>
+          Kirim ulang (<span id="countdown">60</span>s)
+        </button>
+      </p>
+
+      <button type="submit" class="btn-auth">
+        Verifikasi Kode
+      </button>
+    </form>
+  </div>
+
+  <!-- ══════════════════════════════
+       STEP 3 — Reset Password Baru
+       ══════════════════════════════ -->
+  <div id="stepNewPass" style="display:none;">
+    <div class="auth-header">
+      <h1>Buat Password <span>Baru</span></h1>
+      <p>Pastikan password baru lebih kuat dari yang lama ya!</p>
+    </div>
+
+    <div class="auth-alert" id="resetAlert" role="alert"></div>
+
+    <form class="auth-form" id="resetPassForm" novalidate>
+      <div class="form-group">
+        <label for="newPass">Password Baru</label>
+        <div class="input-wrap">
+          <input
+            type="password"
+            id="newPass"
+            name="newPass"
+            placeholder="Masukkan password baru"
+            autocomplete="new-password"
+            required />
+          <button type="button" class="toggle-password" id="toggleNew" aria-label="Tampilkan password">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        <div class="password-strength">
+          <div class="strength-bar" id="rbar1"></div>
+          <div class="strength-bar" id="rbar2"></div>
+          <div class="strength-bar" id="rbar3"></div>
+          <div class="strength-bar" id="rbar4"></div>
+        </div>
+        <span class="strength-label" id="rStrengthLabel">Masukkan password baru</span>
+        <span class="field-msg" id="newPassMsg"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmNewPass">Konfirmasi Password</label>
+        <div class="input-wrap">
+          <input
+            type="password"
+            id="confirmNewPass"
+            name="confirmNewPass"
+            placeholder="Ulangi password baru"
+            autocomplete="new-password"
+            required />
+          <button type="button" class="toggle-password" id="toggleConfirmNew" aria-label="Tampilkan konfirmasi">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        <span class="field-msg" id="confirmNewMsg"></span>
+      </div>
+
+      <button type="submit" class="btn-auth">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Simpan Password Baru
+      </button>
+    </form>
+  </div>
+
+  <!-- ══════════════════════════════
+       STEP 4 — Sukses
+       ══════════════════════════════ -->
+  <div id="stepDone" style="display:none; text-align:center;">
+    <div style="font-size:3rem; margin-bottom:1rem;">🎉</div>
+    <h2 style="font-family:var(--font-display);font-size:1.6rem;font-weight:900;color:var(--black);margin-bottom:0.8rem;">
+      Password <span style="color:var(--olive-dark);font-style:italic;">Berhasil</span> Diubah!
+    </h2>
+    <p style="color:var(--olive-main);font-size:0.95rem;margin-bottom:2rem;line-height:1.7;">
+      Password kamu berhasil diperbarui. Silakan login dengan password baru.
+    </p>
+    <a href="login.html" class="btn-auth" style="display:flex;justify-content:center;">
+      Kembali ke Login
+    </a>
+  </div>
+
+  <!-- Back link -->
+  <div class="auth-footer" id="backToLogin" style="margin-top:1.4rem;">
+    <a href="login.html">← Kembali ke Login</a>
+  </div>
+
+</div>
+
+<script src="js/login.js"></script>
+</body>
+        </html>
